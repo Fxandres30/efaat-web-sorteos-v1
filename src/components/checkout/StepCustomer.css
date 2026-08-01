@@ -1,0 +1,85 @@
+.step-customer{
+
+    margin-top:30px;
+
+}
+
+.step-customer h3{
+
+    font-size:30px;
+
+}
+
+.step-customer p{
+
+    color:#6b7280;
+
+    margin:15px 0 30px;
+
+}
+
+.step-customer label{
+
+    display:block;
+
+    margin-top:20px;
+
+    margin-bottom:8px;
+
+    font-weight:600;
+
+}
+
+.step-customer input{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #d1d5db;
+
+    border-radius:12px;
+
+    font-size:15px;
+
+}
+
+.customer-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:35px;
+
+}
+
+.back-btn{
+
+    padding:15px 25px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#e5e7eb;
+
+    cursor:pointer;
+
+}
+
+.next-btn{
+
+    padding:15px 30px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+}

@@ -1,0 +1,93 @@
+.step-receipt{
+
+    margin-top:30px;
+
+}
+
+.step-receipt h3{
+
+    font-size:30px;
+
+}
+
+.step-receipt p{
+
+    margin:15px 0 30px;
+
+    color:#6b7280;
+
+}
+
+.upload-box{
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    border:2px dashed #cbd5e1;
+
+    border-radius:20px;
+
+    padding:60px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.upload-box:hover{
+
+    border-color:#2563eb;
+
+}
+
+.upload-box input{
+
+    display:none;
+
+}
+
+.upload-icon{
+
+    font-size:55px;
+
+    margin-bottom:20px;
+
+}
+
+.upload-box strong{
+
+    font-size:22px;
+
+}
+
+.upload-box small{
+
+    margin-top:10px;
+
+    color:#6b7280;
+
+}
+
+.receipt-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:35px;
+
+}
+
+.next-btn:disabled{
+
+    opacity:.5;
+
+    cursor:not-allowed;
+
+}

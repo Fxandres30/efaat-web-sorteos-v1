@@ -1,0 +1,241 @@
+.step-success{
+
+    text-align:center;
+
+    padding:20px 10px;
+
+}
+
+.success-icon{
+
+    width:90px;
+
+    height:90px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    background:#dcfce7;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    font-size:45px;
+
+    margin-bottom:25px;
+
+}
+
+.step-success h2{
+
+    font-size:34px;
+
+    color:#111827;
+
+    margin-bottom:15px;
+
+}
+
+.success-description{
+
+    max-width:650px;
+
+    margin:0 auto 35px;
+
+    color:#6b7280;
+
+    line-height:1.7;
+
+    font-size:16px;
+
+}
+
+.success-summary{
+
+    background:#f8fafc;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    margin-bottom:30px;
+
+}
+
+.success-summary div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:12px 0;
+
+    border-bottom:1px solid #e5e7eb;
+
+}
+
+.success-summary div:last-child{
+
+    border:none;
+
+}
+
+.success-summary span{
+
+    color:#6b7280;
+
+}
+
+.success-summary strong{
+
+    color:#111827;
+
+}
+
+.success-status{
+
+    background:#fef9c3;
+
+    border:1px solid #fde68a;
+
+    border-radius:18px;
+
+    padding:22px;
+
+    margin-bottom:30px;
+
+}
+
+.success-status h3{
+
+    color:#92400e;
+
+    margin-bottom:10px;
+
+}
+
+.success-status p{
+
+    color:#78350f;
+
+}
+
+.success-info{
+
+    background:#eff6ff;
+
+    border:1px solid #bfdbfe;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    text-align:left;
+
+    margin-bottom:35px;
+
+}
+
+.success-info h3{
+
+    margin-bottom:15px;
+
+}
+
+.success-info ul{
+
+    margin-left:20px;
+
+}
+
+.success-info li{
+
+    margin-bottom:12px;
+
+    color:#374151;
+
+}
+
+.success-actions{
+
+    display:flex;
+
+    gap:15px;
+
+}
+
+.success-primary{
+
+    flex:1;
+
+    background:#2563eb;
+
+    color:white;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    padding:17px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.success-primary:hover{
+
+    background:#1d4ed8;
+
+}
+
+.success-secondary{
+
+    flex:1;
+
+    border:2px solid #2563eb;
+
+    color:#2563eb;
+
+    text-decoration:none;
+
+    text-align:center;
+
+    padding:17px;
+
+    border-radius:14px;
+
+    font-weight:700;
+
+    transition:.25s;
+
+}
+
+.success-secondary:hover{
+
+    background:#2563eb;
+
+    color:white;
+
+}
+
+@media(max-width:768px){
+
+    .success-actions{
+
+        flex-direction:column;
+
+    }
+
+}

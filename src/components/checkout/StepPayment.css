@@ -1,0 +1,113 @@
+.step-payment{
+
+    margin-top:30px;
+
+}
+
+.step-payment h3{
+
+    font-size:30px;
+
+}
+
+.step-payment p{
+
+    margin:15px 0 30px;
+
+    color:#6b7280;
+
+}
+
+.payment-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.payment-card{
+
+    border:2px solid #e5e7eb;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    background:white;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.payment-card:hover{
+
+    border-color:#2563eb;
+
+}
+
+.payment-card.active{
+
+    border-color:#2563eb;
+
+    background:#eff6ff;
+
+}
+
+.payment-card img{
+
+    width:60px;
+
+    margin-bottom:15px;
+
+}
+
+.payment-card strong{
+
+    display:block;
+
+    font-size:18px;
+
+}
+
+.payment-card span{
+
+    color:#6b7280;
+
+}
+
+.payment-info{
+
+    margin-top:30px;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    background:#f8fafc;
+
+}
+
+.payment-info div{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:15px;
+
+}
+
+.payment-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    margin-top:35px;
+
+}

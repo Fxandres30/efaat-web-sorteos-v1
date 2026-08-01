@@ -1,0 +1,121 @@
+.draw-info-section{
+
+    padding:90px 0;
+
+    background:white;
+
+}
+
+.section-header{
+
+    text-align:center;
+
+    margin-bottom:60px;
+
+}
+
+.section-header span{
+
+    color:#2563eb;
+
+    font-weight:700;
+
+}
+
+.section-header h2{
+
+    margin:18px 0;
+
+    font-size:2.6rem;
+
+    color:#111827;
+
+}
+
+.section-header p{
+
+    color:#64748b;
+
+}
+
+.draw-info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(3,1fr);
+
+    gap:24px;
+
+}
+
+.info-card{
+
+    background:#fff;
+
+    border:1px solid #e5e7eb;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.25s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.05);
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-6px);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.12);
+
+}
+
+.info-card span{
+
+    font-size:2rem;
+
+}
+
+.info-card small{
+
+    display:block;
+
+    margin:16px 0 10px;
+
+    color:#64748b;
+
+}
+
+.info-card strong{
+
+    display:block;
+
+    font-size:1.25rem;
+
+    color:#111827;
+
+}
+
+@media(max-width:900px){
+
+.draw-info-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:650px){
+
+.draw-info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+}
