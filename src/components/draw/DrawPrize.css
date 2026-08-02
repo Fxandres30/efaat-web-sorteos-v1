@@ -1,34 +1,30 @@
 .draw-prize{
 
-    padding:90px 0;
+    padding:40px 0;
 
-    background:#f8fafc;
+    background:#fff;
 
 }
 
 .section-title{
 
     text-align:center;
-
-    margin-bottom:60px;
+    margin-bottom:24px;
 
 }
 
 .section-title span{
 
     color:#2563eb;
-
     font-weight:700;
+    font-size:.95rem;
 
 }
 
 .section-title h2{
 
-    font-size:2.6rem;
-
-    margin:15px 0;
-
-    color:#111827;
+    margin:10px 0 6px;
+    font-size:2rem;
 
 }
 
@@ -38,83 +34,128 @@
 
 }
 
-.prize-grid{
+.prize-list{
 
-    display:grid;
-
-    grid-template-columns:1fr 1fr;
-
-    gap:70px;
-
-    align-items:center;
-
-}
-
-.prize-left img{
-
-    width:100%;
-
-    border-radius:25px;
-
-    box-shadow:0 25px 60px rgba(0,0,0,.12);
-
-}
-
-.prize-right{
+    max-width:700px;
+    margin:auto;
 
     display:flex;
-
     flex-direction:column;
-
-    gap:22px;
+    gap:14px;
 
 }
 
 .prize-item{
 
     display:flex;
+    align-items:center;
+    gap:16px;
 
-    gap:20px;
+    padding:18px;
 
-    background:white;
+    border:1px solid #e5e7eb;
+    border-radius:14px;
 
-    padding:24px;
+    background:#fff;
 
-    border-radius:18px;
-
-    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.25s;
 
 }
 
-.prize-item span{
+.prize-item:hover{
 
-    font-size:2rem;
+    transform:translateY(-2px);
+
+    box-shadow:0 8px 20px rgba(0,0,0,.06);
+
+}
+
+.prize-icon{
+
+    width:50px;
+    height:50px;
+
+    border-radius:50%;
+
+    background:#eff6ff;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    font-size:24px;
+
+    flex-shrink:0;
 
 }
 
 .prize-item strong{
 
     display:block;
-
-    font-size:1.1rem;
-
-    margin-bottom:6px;
+    font-size:1rem;
+    margin-bottom:4px;
 
 }
 
 .prize-item p{
 
     color:#64748b;
-
-    line-height:1.6;
+    font-size:.9rem;
 
 }
 
-@media(max-width:900px){
+@media(max-width:768px){
 
-.prize-grid{
+.draw-prize{
 
-grid-template-columns:1fr;
+    padding:24px 0;
+
+}
+
+.section-title{
+
+    margin-bottom:18px;
+
+}
+
+.section-title h2{
+
+    font-size:1.5rem;
+
+}
+
+.section-title p{
+
+    font-size:.9rem;
+
+}
+
+.prize-item{
+
+    padding:14px;
+
+    gap:12px;
+
+}
+
+.prize-icon{
+
+    width:42px;
+    height:42px;
+
+    font-size:20px;
+
+}
+
+.prize-item strong{
+
+    font-size:.95rem;
+
+}
+
+.prize-item p{
+
+    font-size:.82rem;
 
 }
 

@@ -15,100 +15,36 @@ export default function DrawInfo({ draw }: Props) {
 
             <div className="container">
 
-                <div className="section-header">
+                <div className="draw-summary">
 
-                    <span>
-
-                        📊 Información del sorteo
-
-                    </span>
-
-                    <h2>
-
-                        Todo lo que necesitas saber
-
-                    </h2>
-
-                    <p>
-
-                        Consulta la información más importante antes de participar.
-
-                    </p>
-
-                </div>
-
-                <div className="draw-info-grid">
-
-                    <div className="info-card">
-
-                        <span>🎲</span>
-
-                        <small>Lotería</small>
-
+                    <div className="summary-row">
+                        <span>🎲 Lotería</span>
                         <strong>{draw.lottery}</strong>
-
                     </div>
 
-                    <div className="info-card">
-
-                        <span>📅</span>
-
-                        <small>Fecha</small>
-
+                    <div className="summary-row">
+                        <span>📅 Fecha</span>
                         <strong>{draw.drawDate}</strong>
-
                     </div>
 
-                    <div className="info-card">
-
-                        <span>🕙</span>
-
-                        <small>Hora</small>
-
+                    <div className="summary-row">
+                        <span>🕙 Hora</span>
                         <strong>{draw.drawHour}</strong>
-
                     </div>
 
-                    <div className="info-card">
-
-                        <span>💰</span>
-
-                        <small>Valor</small>
-
-                        <strong>
-
-                            ${draw.ticketPrice.toLocaleString("es-CO")}
-
-                        </strong>
-
+                    <div className="summary-row">
+                        <span>💰 Valor</span>
+                        <strong>${draw.ticketPrice.toLocaleString("es-CO")}</strong>
                     </div>
 
-                    <div className="info-card">
-
-                        <span>👥</span>
-
-                        <small>Vendidos</small>
-
-                        <strong>
-
-                            {draw.sold.toLocaleString("es-CO")}
-
-                        </strong>
-
+                    <div className="summary-row">
+                        <span>👥 Vendidos</span>
+                        <strong>{draw.sold.toLocaleString("es-CO")}</strong>
                     </div>
 
-                    <div className="info-card">
-
-                        <span>🔥</span>
-
-                        <small>Disponibles</small>
-
-                        <strong>
-
-                            {remaining.toLocaleString("es-CO")}
-
-                        </strong>
-
+                    <div className="summary-row">
+                        <span>🔥 Disponibles</span>
+                        <strong>{remaining.toLocaleString("es-CO")}</strong>
                     </div>
 
                 </div>

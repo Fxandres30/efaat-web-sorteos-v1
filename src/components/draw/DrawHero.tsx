@@ -6,106 +6,85 @@ interface Props {
   onBuy: () => void;
 }
 
-export default function DrawHero({
-  draw,
-  onBuy,
-}: Props) {
+export default function DrawHero({ draw, onBuy }: Props) {
 
   const progress = Math.round(
     (draw.sold / draw.total) * 100
   );
 
+  const available = draw.total - draw.sold;
+
   return (
     <section className="draw-hero">
 
-      <div className="container draw-hero-container">
+      <div className="draw-card">
 
         <div className="draw-hero-image">
-
           <img
             src={draw.image}
             alt={draw.title}
           />
-
         </div>
 
-        <div className="draw-hero-content">
+        <div className="draw-body">
 
-          <span className="draw-badge">
-            🟢 Sorteo activo
-          </span>
+          <div className="draw-header">
 
-          <h1>
-            {draw.title}
-          </h1>
+            <span className="draw-badge">
+              🟢 Sorteo activo
+            </span>
 
-          <p>
-            {draw.prize}
-          </p>
-
-          <div className="draw-progress">
-
-            <div className="draw-progress-top">
-
-              <span>
-                {draw.sold.toLocaleString("es-CO")} vendidos
-              </span>
-
-              <strong>
-                {progress}%
-              </strong>
-
-            </div>
-
-            <div className="progress">
-
-              <div
-                className="progress-fill"
-                style={{
-                  width: `${progress}%`
-                }}
-              />
-
-            </div>
+            <strong>{progress}%</strong>
 
           </div>
 
-          <div className="draw-details">
+          <h1>{draw.title}</h1>
+
+          <p>{draw.prize}</p>
+
+          <div className="draw-progress">
+            <div
+              className="progress-fill"
+              style={{
+                width: `${progress}%`
+              }}
+            />
+          </div>
+
+          <div className="draw-stats">
+
+            <span>
+              {draw.sold.toLocaleString("es-CO")} vendidos
+            </span>
+
+            <span>
+              {available.toLocaleString("es-CO")} disponibles
+            </span>
+
+          </div>
+
+          <div className="draw-info">
 
             <div>
-
-              <span>🎲 Lotería</span>
-
+              <span>🎲</span>
               <strong>{draw.lottery}</strong>
-
             </div>
 
             <div>
-
-              <span>📅 Fecha</span>
-
+              <span>📅</span>
               <strong>{draw.drawDate}</strong>
-
             </div>
 
             <div>
-
-              <span>🕙 Hora</span>
-
+              <span>🕙</span>
               <strong>{draw.drawHour}</strong>
-
             </div>
 
             <div>
-
-              <span>💰 Valor</span>
-
+              <span>💰</span>
               <strong>
-
                 ${draw.ticketPrice.toLocaleString("es-CO")}
-
               </strong>
-
             </div>
 
           </div>

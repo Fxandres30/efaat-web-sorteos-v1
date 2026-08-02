@@ -2,6 +2,34 @@ import "./DrawPrize.css";
 
 export default function DrawPrize() {
 
+    const items = [
+
+        {
+            icon: "✅",
+            title: "Modelo 2026",
+            text: "Última versión disponible."
+        },
+
+        {
+            icon: "🛡️",
+            title: "Documentación al día",
+            text: "Lista para entregar."
+        },
+
+        {
+            icon: "🔑",
+            title: "Entrega inmediata",
+            text: "Al confirmar el ganador."
+        },
+
+        {
+            icon: "🏆",
+            title: "Premio garantizado",
+            text: "Sorteo transparente."
+        }
+
+    ];
+
     return (
 
         <section className="draw-prize">
@@ -11,130 +39,51 @@ export default function DrawPrize() {
                 <div className="section-title">
 
                     <span>
-
                         🏍 Premio principal
-
                     </span>
 
                     <h2>
-
-                        ¿Qué incluye este premio?
-
+                        ¿Por qué participar?
                     </h2>
 
                     <p>
-
-                        Todo listo para entregar al ganador del sorteo.
-
+                        Todo listo para entregar al ganador.
                     </p>
 
                 </div>
 
-                <div className="prize-grid">
+                <div className="prize-list">
 
-                    <div className="prize-left">
+                    {
 
-                        <img
+                        items.map((item,index)=>(
 
-                            src="/images/draws/nkd.jpg"
+                            <div
+                                key={index}
+                                className="prize-item"
+                            >
 
-                            alt="Moto"
+                                <div className="prize-icon">
+                                    {item.icon}
+                                </div>
 
-                        />
+                                <div>
 
-                    </div>
+                                    <strong>
+                                        {item.title}
+                                    </strong>
 
-                    <div className="prize-right">
+                                    <p>
+                                        {item.text}
+                                    </p>
 
-                        <div className="prize-item">
-
-                            <span>✅</span>
-
-                            <div>
-
-                                <strong>
-
-                                    Modelo 2026
-
-                                </strong>
-
-                                <p>
-
-                                    Última versión disponible.
-
-                                </p>
+                                </div>
 
                             </div>
 
-                        </div>
+                        ))
 
-                        <div className="prize-item">
-
-                            <span>🛡️</span>
-
-                            <div>
-
-                                <strong>
-
-                                    Documentación al día
-
-                                </strong>
-
-                                <p>
-
-                                    Lista para entregar.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div className="prize-item">
-
-                            <span>🔑</span>
-
-                            <div>
-
-                                <strong>
-
-                                    Entrega inmediata
-
-                                </strong>
-
-                                <p>
-
-                                    Al confirmar el ganador.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                        <div className="prize-item">
-
-                            <span>🏆</span>
-
-                            <div>
-
-                                <strong>
-
-                                    Premio garantizado
-
-                                </strong>
-
-                                <p>
-
-                                    Sorteo transparente.
-
-                                </p>
-
-                            </div>
-
-                        </div>
-
-                    </div>
+                    }
 
                 </div>
 

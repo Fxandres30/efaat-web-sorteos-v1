@@ -1,36 +1,22 @@
 .draw-card{
 
     background:#fff;
-
-    border-radius:24px;
-
+    border-radius:22px;
     overflow:hidden;
 
-    box-shadow:0 12px 35px rgba(0,0,0,.08);
+    border:1px solid #edf1f7;
 
-    display:flex;
-
-    flex-direction:column;
+    box-shadow:0 10px 30px rgba(0,0,0,.08);
 
     transition:.25s;
-
-    border:1px solid #edf1f7;
 
 }
 
 .draw-card:hover{
 
-    transform:translateY(-6px);
-
-    box-shadow:0 18px 45px rgba(0,0,0,.12);
+    transform:translateY(-5px);
 
 }
-
-
-
-
-
-
 
 .draw-image-box{
 
@@ -39,23 +25,18 @@
     background:#f8fafc;
 
     display:flex;
-
     justify-content:center;
-
     align-items:center;
 
-    padding:30px;
+    padding:20px;
 
 }
 
 .draw-image{
 
     width:100%;
-
     max-width:240px;
-
-    height:180px;
-
+    height:200px;
     object-fit:contain;
 
 }
@@ -64,33 +45,24 @@
 
     position:absolute;
 
-    top:18px;
-
-    left:18px;
+    top:15px;
+    left:15px;
 
     background:#dcfce7;
-
     color:#15803d;
 
-    padding:7px 14px;
+    padding:6px 12px;
 
-    border-radius:50px;
+    border-radius:999px;
 
-    font-size:.75rem;
-
+    font-size:.72rem;
     font-weight:700;
 
 }
 
-
-
-
-
-
-
 .draw-content{
 
-    padding:26px;
+    padding:22px;
 
 }
 
@@ -98,75 +70,60 @@
 
     display:inline-block;
 
-    background:#eef4ff;
+    padding:6px 12px;
 
+    border-radius:999px;
+
+    background:#eef4ff;
     color:#2563eb;
 
-    padding:6px 14px;
-
-    border-radius:50px;
-
-    font-size:.75rem;
-
+    font-size:.72rem;
     font-weight:700;
 
-    margin-bottom:14px;
+    margin-bottom:12px;
 
 }
 
 .draw-title{
 
-    font-size:2rem;
-
+    font-size:1.9rem;
     font-weight:800;
 
     color:#111827;
 
-    margin-bottom:8px;
+    margin:0 0 6px;
 
 }
 
 .draw-description{
 
-    color:#6b7280;
+    color:#64748b;
 
     font-size:.95rem;
 
-    margin-bottom:24px;
-
-    line-height:1.5;
+    margin-bottom:18px;
 
 }
 
-
-
-
-
-
-
 .draw-progress{
 
-    margin-bottom:24px;
+    margin-bottom:18px;
 
 }
 
 .draw-progress-top{
 
     display:flex;
-
     justify-content:space-between;
 
-    align-items:center;
-
-    margin-bottom:8px;
+    margin-bottom:6px;
 
 }
 
 .draw-progress-top span{
 
-    color:#6b7280;
-
-    font-size:.9rem;
+    color:#64748b;
+    font-size:.88rem;
 
 }
 
@@ -174,19 +131,15 @@
 
     color:#2563eb;
 
-    font-size:1rem;
-
 }
 
 .progress{
-
-    width:100%;
 
     height:10px;
 
     background:#e5e7eb;
 
-    border-radius:50px;
+    border-radius:999px;
 
     overflow:hidden;
 
@@ -198,27 +151,19 @@
 
     background:linear-gradient(90deg,#2563eb,#3b82f6);
 
-    border-radius:50px;
-
 }
 
 .draw-progress small{
 
     display:block;
 
-    margin-top:8px;
+    margin-top:6px;
 
-    color:#6b7280;
+    color:#64748b;
 
-    font-size:.82rem;
+    font-size:.8rem;
 
 }
-
-
-
-
-
-
 
 .draw-info-grid{
 
@@ -226,9 +171,9 @@
 
     grid-template-columns:repeat(2,1fr);
 
-    gap:16px;
+    gap:10px;
 
-    margin-bottom:30px;
+    margin-bottom:20px;
 
 }
 
@@ -236,11 +181,11 @@
 
     background:#f8fafc;
 
-    border:1px solid #edf1f7;
+    border:1px solid #e5e7eb;
 
-    border-radius:16px;
+    border-radius:12px;
 
-    padding:15px;
+    padding:12px;
 
 }
 
@@ -248,122 +193,67 @@
 
     display:block;
 
-    font-size:.78rem;
+    font-size:.72rem;
 
     color:#64748b;
 
-    margin-bottom:6px;
+    margin-bottom:4px;
 
 }
 
 .draw-info strong{
 
-    display:block;
-
-    font-size:.96rem;
+    font-size:.9rem;
 
     color:#111827;
 
 }
 
-
-
-
-
-
-
 .draw-actions{
 
-    display:flex;
+    display:grid;
 
-    gap:12px;
+    grid-template-columns:1fr 1fr;
+
+    gap:10px;
+
+}
+
+.draw-button-secondary,
+.draw-button-primary{
+
+    height:46px;
+
+    border-radius:12px;
+
+    font-size:.9rem;
+
+    font-weight:700;
 
 }
 
 .draw-button-secondary{
 
-    flex:1;
-
-    text-align:center;
-
-    text-decoration:none;
-
-    padding:14px;
-
-    border-radius:14px;
-
     border:2px solid #2563eb;
 
     color:#2563eb;
 
-    font-weight:700;
+    text-decoration:none;
 
-    transition:.2s;
-
-}
-
-.draw-button-secondary:hover{
-
-    background:#eff6ff;
+    display:flex;
+    justify-content:center;
+    align-items:center;
 
 }
 
 .draw-button-primary{
 
-    flex:1;
-
     border:none;
-
-    border-radius:14px;
 
     background:#2563eb;
 
     color:#fff;
 
-    font-weight:700;
-
     cursor:pointer;
-
-    transition:.2s;
-
-}
-
-.draw-button-primary:hover{
-
-    background:#1d4ed8;
-
-}
-
-
-
-
-
-
-
-@media(max-width:768px){
-
-    .draw-content{
-
-        padding:20px;
-
-    }
-
-    .draw-title{
-
-        font-size:1.55rem;
-
-    }
-
-    .draw-info-grid{
-
-        grid-template-columns:1fr;
-
-    }
-
-    .draw-actions{
-
-        flex-direction:column;
-
-    }
 
 }
