@@ -1,183 +1,119 @@
 "use client";
 
 import "./StepQuantity.css";
-
 import { Draw } from "../../types/Draw";
 
-interface Props{
-
-    draw:Draw;
-
-    quantity:number;
-
-    setQuantity:(value:number)=>void;
-
-    next:()=>void;
-
+interface Props {
+    draw: Draw;
+    quantity: number;
+    setQuantity: (value: number) => void;
+    next: () => void;
 }
 
 export default function StepQuantity({
-
     draw,
-
     quantity,
-
     setQuantity,
+    next,
+}: Props) {
 
-    next
+    const options = [1, 5, 10, 20];
 
-}:Props){
+    const total = draw.ticketPrice * quantity;
 
-    const options=[
-
-        1,
-
-        5,
-
-        10,
-
-        20
-
-    ];
-
-    const total=draw.ticketPrice*quantity;
-
-    return(
+    return (
 
         <div className="step-quantity">
 
-            <h3>
+            <div className="step-header">
 
-                ¿Cuántos números deseas comprar?
+                <h3>
+                    Elige la cantidad
+                </h3>
 
-            </h3>
+                <p>
+                    Puedes seleccionar una opción rápida o escribir otra cantidad.
+                </p>
 
-            <p>
-
-                Selecciona una cantidad o escribe una personalizada.
-
-            </p>
+            </div>
 
             <div className="quantity-grid">
 
-                {
+                {options.map((item) => (
 
-                    options.map((item)=>(
-
-                        <button
-
-                            key={item}
-
-                            className={
-
-                                quantity===item
-
+                    <button
+                        key={item}
+                        className={
+                            quantity === item
                                 ? "quantity-card active"
-
                                 : "quantity-card"
+                        }
+                        onClick={() => setQuantity(item)}
+                    >
 
-                            }
+                        <strong>{item}</strong>
 
-                            onClick={()=>setQuantity(item)}
+                        <small>
+                            Número{item > 1 ? "s" : ""}
+                        </small>
 
-                        >
+                    </button>
 
-                            <strong>
-
-                                {item}
-
-                            </strong>
-
-                            <span>
-
-                                Número{item>1?"s":""}
-
-                            </span>
-
-                        </button>
-
-                    ))
-
-                }
+                ))}
 
             </div>
 
             <div className="custom-quantity">
 
                 <label>
-
-                    Cantidad personalizada
-
+                    Otra cantidad
                 </label>
 
                 <input
-
                     type="number"
-
                     min={1}
-
                     value={quantity}
-
-                    onChange={(e)=>
-
-                        setQuantity(
-
-                            Number(e.target.value)
-
-                        )
-
+                    onChange={(e) =>
+                        setQuantity(Number(e.target.value))
                     }
-
                 />
 
             </div>
 
             <div className="summary-box">
 
-                <div>
+                <div className="summary-row">
 
                     <span>
-
-                        Valor por número
-
+                        Precio
                     </span>
 
                     <strong>
-
                         ${draw.ticketPrice.toLocaleString("es-CO")}
-
                     </strong>
 
                 </div>
 
-                <div>
+                <div className="summary-row">
 
                     <span>
-
                         Cantidad
-
                     </span>
 
                     <strong>
-
                         {quantity}
-
                     </strong>
 
                 </div>
 
-                <div>
+                <div className="summary-total">
 
                     <span>
-
-                        Total a pagar
-
+                        Total
                     </span>
 
                     <strong>
-
                         ${total.toLocaleString("es-CO")}
-
                     </strong>
 
                 </div>
@@ -185,11 +121,8 @@ export default function StepQuantity({
             </div>
 
             <button
-
                 className="continue-button"
-
                 onClick={next}
-
             >
 
                 Continuar →
