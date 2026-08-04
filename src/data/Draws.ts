@@ -28,6 +28,8 @@ export async function getDraws(): Promise<Draw[]> {
 
         return {
 
+            description: evento.descripcion,
+
             id: evento.id,
 
             slug: evento.slug,
