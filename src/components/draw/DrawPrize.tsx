@@ -1,34 +1,13 @@
 import "./DrawPrize.css";
+import { Draw } from "../../types/Draw";
 
-export default function DrawPrize() {
+interface Props {
 
-    const items = [
+    draw: Draw;
 
-        {
-            icon: "✅",
-            title: "Modelo 2026",
-            text: "Última versión disponible."
-        },
+}
 
-        {
-            icon: "🛡️",
-            title: "Documentación al día",
-            text: "Lista para entregar."
-        },
-
-        {
-            icon: "🔑",
-            title: "Entrega inmediata",
-            text: "Al confirmar el ganador."
-        },
-
-        {
-            icon: "🏆",
-            title: "Premio garantizado",
-            text: "Sorteo transparente."
-        }
-
-    ];
+export default function DrawPrize({ draw }: Props) {
 
     return (
 
@@ -39,51 +18,122 @@ export default function DrawPrize() {
                 <div className="section-title">
 
                     <span>
-                        🏍 Premio principal
+
+                        🎁 Premio principal
+
                     </span>
 
                     <h2>
-                        ¿Por qué participar?
+
+                        {draw.prize}
+
                     </h2>
 
                     <p>
-                        Todo listo para entregar al ganador.
+
+                        {draw.description ?? "Participa y gana este increíble premio."}
+
                     </p>
 
                 </div>
 
                 <div className="prize-list">
 
-                    {
+                    <div className="prize-item">
 
-                        items.map((item,index)=>(
+                        <div className="prize-icon">
+                            🎁
+                        </div>
 
-                            <div
-                                key={index}
-                                className="prize-item"
-                            >
+                        <div>
 
-                                <div className="prize-icon">
-                                    {item.icon}
-                                </div>
+                            <strong>
 
-                                <div>
+                                Premio
 
-                                    <strong>
-                                        {item.title}
-                                    </strong>
+                            </strong>
 
-                                    <p>
-                                        {item.text}
-                                    </p>
+                            <p>
 
-                                </div>
+                                {draw.prize}
 
-                            </div>
+                            </p>
 
-                        ))
+                        </div>
 
-                    }
+                    </div>
+
+                    <div className="prize-item">
+
+                        <div className="prize-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <strong>
+
+                                Valor por número
+
+                            </strong>
+
+                            <p>
+
+                                ${draw.ticketPrice.toLocaleString("es-CO")}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div className="prize-item">
+
+                        <div className="prize-icon">
+                            🎲
+                        </div>
+
+                        <div>
+
+                            <strong>
+
+                                Modalidad
+
+                            </strong>
+
+                            <p>
+
+                                {draw.lottery}
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div className="prize-item">
+
+                        <div className="prize-icon">
+                            📅
+                        </div>
+
+                        <div>
+
+                            <strong>
+
+                                Fecha del sorteo
+
+                            </strong>
+
+                            <p>
+
+                                {draw.drawDate} - {draw.drawHour}
+
+                            </p>
+
+                        </div>
+
+                    </div>
 
                 </div>
 

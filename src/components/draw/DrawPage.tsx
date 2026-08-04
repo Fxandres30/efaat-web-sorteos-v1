@@ -33,7 +33,11 @@ export default function DrawPage({draw}:Props){
 <DrawTrust />
 
 
-<DrawPrize />
+<DrawPrize
+
+            draw={draw}
+
+        />
 
 <DrawInfo
     draw={draw}

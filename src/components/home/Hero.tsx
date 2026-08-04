@@ -1,6 +1,17 @@
 import "./Hero.css";
+import { Draw } from "../../types/Draw";
 
-export default function Hero() {
+interface Props {
+
+    draw: Draw;
+
+}
+
+export default function Hero({ draw }: Props) {
+
+    const porcentaje = Math.round(
+        (draw.sold / draw.total) * 100
+    );
 
     return (
 
@@ -8,7 +19,6 @@ export default function Hero() {
 
             <div className="container hero-container">
 
-                {/* Lado izquierdo */}
                 <div className="hero-left">
 
                     <span className="hero-badge">
@@ -22,84 +32,81 @@ export default function Hero() {
                     </h1>
 
                     <p className="hero-text">
-                        Compra tus números en menos de un minuto, paga fácilmente por Bre,
-                        envía tu comprobante y recibe automáticamente tus números por WhatsApp.
+                        Compra tus números en menos de un minuto,
+                        paga fácilmente por Bre y recibe tus números
+                        automáticamente por WhatsApp.
                     </p>
 
                     <div className="hero-buttons">
 
                         <button className="hero-primary">
+
                             Ver sorteos
+
                         </button>
 
                         <button className="hero-secondary">
+
                             ¿Cómo funciona?
+
                         </button>
-
-                    </div>
-
-                    <div className="hero-features">
-
-                        <div className="feature">
-                            <span>✅</span>
-                            <p>Pago seguro</p>
-                        </div>
-
-                        <div className="feature">
-                            <span>📲</span>
-                            <p>Entrega automática</p>
-                        </div>
-
-                        <div className="feature">
-                            <span>🏆</span>
-                            <p>Ganadores publicados</p>
-                        </div>
-
-                        <div className="feature">
-                            <span>⚡</span>
-                            <p>Compra en 1 minuto</p>
-                        </div>
 
                     </div>
 
                 </div>
 
-                {/* Solo escritorio */}
                 <aside className="hero-right">
 
                     <div className="hero-card">
 
                         <span className="hero-card-status">
-                            🟢 Sorteo destacado
+
+                            🟢 Evento destacado
+
                         </span>
 
                         <img
-                            src="/images/draws/nkd.jpg"
-                            alt="Moto NKD 125"
+
+                            src={draw.image}
+
+                            alt={draw.title}
+
                             className="hero-card-image"
+
                         />
 
                         <div className="hero-card-content">
 
                             <h2>
-                                Moto NKD 125
+
+                                {draw.title}
+
                             </h2>
 
                             <small>
-                                Modelo 2026
+
+                                {draw.prize}
+
                             </small>
 
                             <h3>
-                                $12.000.000
+
+                                ${draw.ticketPrice.toLocaleString("es-CO")} c/u
+
                             </h3>
 
                             <div className="hero-progress">
 
                                 <div
+
                                     className="hero-progress-fill"
+
                                     style={{
-                                        width: "92%"
+
+                                        width: `${porcentaje}%`
+
                                     }}
+
                                 />
 
                             </div>
@@ -107,22 +114,30 @@ export default function Hero() {
                             <div className="hero-card-footer">
 
                                 <span>
-                                    4.612 / 5.000 vendidos
+
+                                    {draw.sold.toLocaleString("es-CO")}
+
+                                    {" / "}
+
+                                    {draw.total.toLocaleString("es-CO")}
+
+                                    {" vendidos"}
+
                                 </span>
 
                                 <strong>
-                                    92%
+
+                                    {porcentaje}%
+
                                 </strong>
 
                             </div>
 
                             <button className="hero-buy">
-                                Participar ahora
-                            </button>
 
-                            <p className="hero-info">
-                                🎯 Compra 100% online y recibe tus números automáticamente.
-                            </p>
+                                Participar ahora
+
+                            </button>
 
                         </div>
 

@@ -1,36 +1,32 @@
 import { notFound } from "next/navigation";
 
-import { draws } from "../../../data/Draws";
-
 import DrawPage from "../../../components/draw/DrawPage";
 
-interface Props{
+import { getDrawBySlug } from "../../../services/EventService";
 
-    params:Promise<{
+interface Props {
 
-        slug:string;
+    params: Promise<{
+
+        slug: string;
 
     }>;
 
 }
 
-export default async function Page({params}:Props){
+export default async function Page({ params }: Props) {
 
-    const {slug}=await params;
+    const { slug } = await params;
 
-    const draw=draws.find(
+    const draw = await getDrawBySlug(slug);
 
-        item=>item.slug===slug
-
-    );
-
-    if(!draw){
+    if (!draw) {
 
         notFound();
 
     }
 
-    return(
+    return (
 
         <DrawPage
 

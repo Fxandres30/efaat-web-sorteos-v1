@@ -1,29 +1,31 @@
 export interface Draw {
 
-    id:number;
+    id: string;
 
-    slug:string;
+    slug: string;
 
-    title:string;
+    title: string;
 
-    image:string;
+    image: string;
 
-    prize:string;
+    prize: string;
 
-    lottery:string;
+    lottery: string;
 
-    drawDay:string;
+    drawDay: string;
 
-    drawDate:string;
+    drawDate: string;
 
-    drawHour:string;
+    drawHour: string;
 
-    ticketPrice:number;
+    ticketPrice: number;
 
-    sold:number;
+    sold: number;
 
-    total:number;
+    total: number;
 
-    active:boolean;
+    active: boolean;
+
+    description: string;
 
 }

@@ -1,65 +1,72 @@
+import { supabase } from "../lib/supabase";
 import { Draw } from "../types/Draw";
 
-export const draws: Draw[] = [
+export async function getDraws(): Promise<Draw[]> {
 
-    {
+    const { data, error } = await supabase
+        .from("eventos")
+        .select("*")
+        .eq("publicado", true)
+        .eq("estado", "activo")
+        .order("created_at", {
+            ascending: false
+        });
 
-        id:1,
+    if (error) {
 
-        slug:"moto-nkd-125",
+        console.error("Error obteniendo eventos:", error);
 
-        title:"Moto NKD 125",
-
-        image: "/images/draws/nkd.jpg",
-
-        prize:"Moto NKD 125 Modelo 2026",
-
-        lottery:"Lotería de Medellín",
-
-        drawDay:"Sábado",
-
-        drawDate:"08 Agosto 2026",
-
-        drawHour:"10:00 PM",
-
-        ticketPrice:2000,
-
-        sold:4612,
-
-        total:5000,
-
-        active:true
-
-    },
-
-    {
-
-        id:2,
-
-        slug:"iphone16",
-
-        title:"iPhone 16 Pro Max",
-
-        image:"/images/draws/iphone.png",
-
-        prize:"iPhone 16 Pro Max",
-
-        lottery:"Cruz Roja",
-
-        drawDay:"Domingo",
-
-        drawDate:"10 Agosto 2026",
-
-        drawHour:"3:00 PM",
-
-        ticketPrice:1500,
-
-        sold:7240,
-
-        total:10000,
-
-        active:true
+        return [];
 
     }
 
-];
+    return data.map((evento): Draw => {
+
+        const fecha = evento.fecha_sorteo
+            ? new Date(evento.fecha_sorteo)
+            : null;
+
+        return {
+
+            id: evento.id,
+
+            slug: evento.slug,
+
+            title: evento.titulo,
+
+            image: evento.imagen,
+
+            prize: evento.premio,
+
+            lottery: evento.loteria ?? "",
+
+            drawDay: fecha
+                ? fecha.toLocaleDateString("es-CO", {
+                    weekday: "long"
+                })
+                : "",
+
+            drawDate: fecha
+                ? fecha.toLocaleDateString("es-CO")
+                : "",
+
+            drawHour: fecha
+                ? fecha.toLocaleTimeString("es-CO", {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                })
+                : "",
+
+            ticketPrice: Number(evento.precio_boleta),
+
+            sold: evento.boletas_vendidas,
+
+            total: evento.total_boletas,
+
+            active: evento.estado === "activo"
+
+        };
+
+    });
+
+}

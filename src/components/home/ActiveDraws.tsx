@@ -1,13 +1,19 @@
 import "./ActiveDraws.css";
 import DrawCard from "./DrawCard";
-import { draws } from "../../data/Draws";
 
-export default function ActiveDraws() {
+import { Draw } from "../../types/Draw";
+
+interface Props {
+
+    draws: Draw[];
+
+}
+
+export default function ActiveDraws({ draws }: Props) {
 
     const activos = draws.filter(
-        draw => draw.active
+        (draw: Draw) => draw.active
     );
-
     return (
 
         <section className="active-draws">
